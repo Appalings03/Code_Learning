@@ -1,0 +1,11 @@
+Pour démarrer Excel, vous pouvez :
+
+double-cliquer sur le raccourci Excel sur votre bureau Windows ;
+
+cliquer sur l’icône Excel dans le menu Démarrer.
+
+Pour enregistrer un classeur Excel, cliquez sur l’icône Enregistrer  qui se trouve dans la barre d’outils Accès rapide.
+
+Pour fermer un classeur, cliquez sur l’onglet Fichier puis sur Fermer.
+
+En cliquant sur le bouton Fermer  , vous fermez votre classeur et vous quittez Excel.

@@ -1,0 +1,37 @@
+Terminal -- bash Open ClassRooms
+
+Vous avez lancé votre terminal et découvert à quoi il ressemble.
+
+Vous avez lancé votre première commande : pwd.
+
+Vous avez ajouté un paramètre à la commande pwd : --help.
+
+Ces notions vous seront particulièrement utiles dans les chapitres à venir,
+et notamment le suivant qui va vous apprendre à naviguer dans votre système via
+le terminal !
+
+##############################################################################
+
+commande cd puis path du dossier pour se deplacer
+
+##############################################################################
+RACCOURCI
+
+la flèche haut et la flèche bas permettent de naviguer dans l'historique du terminal et de relancer des commandes déjà tapées précédemment ;
+
+tabpermet de faire de l'autocomplétion, c’est-à-dire compléter automatiquement une commande ou un chemin si on a commencé à en taper le début. Si plusieurs options sont disponibles, taper une deuxième fois sur cette touche affichera la liste des options possibles ;
+
+ctrl + r: cette combinaison permet de faire une recherche dans l'historique des commandes. Faites d’abord ctrl+r pour passer en mode “recherche”, puis tapez une partie de la commande que vous voulez rejouer. Lorsque votre recherche a porté ses fruits, vous n’avez plus qu’à valider en appuyant sur Entrée;
+
+ctrl + aet ctrl + e : ces deux combinaison permettent respectivement d'aller automatiquement au tout début ou à la toute fin de la ligne de commande que vous êtes en train de taper, ce qui peut être pratique lorsque vous êtes en train d'écrire une commande particulièrement longue.
+
+#############################################################################
+Chap2 RESUME
+
+Vous avez découvert que les dossiers sont généralement organisés en sous-dossiers et en fichiers.
+
+Vous avez appris à vous déplacer à l’intérieur d'un dossier grâce à la commande “cd”.
+
+
+
+Vous avez utilisé différents variantes de la commande ls.
