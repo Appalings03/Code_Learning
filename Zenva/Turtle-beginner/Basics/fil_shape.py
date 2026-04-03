@@ -1,0 +1,10 @@
+from turtle import *
+begin_fill()
+color("blue")
+forward(100)
+left(120)
+forward(100)
+left(120)
+forward(100)
+end_fill()
+done()
