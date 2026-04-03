@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!-- Animation realise with https://animejs.com/ -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+        <script src="scripts.js" defer></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Climbing - Need</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header>
+                <div class="logo-container">
+                    <img src="rock.png" alt="Logo">
+                </div>
+                <h1><strong>Climbing - Fontainebleau</strong></h1>
+                <nav class="my-2">
+                    <a href="index.html" class="btn btn-outline-light btn-sm mx-1">Home</a>
+                    <a href="site.html" class="btn btn-outline-light btn-sm mx-1">Site</a>
+                    <a href="matos.html" class="btn btn-outline-light btn-sm mx-1">Material</a>
+                    <a href="inscription.html" class="btn btn-outline-light btn-sm mx-1">Inscription</a>
+                    <a href="contact.html" class="btn btn-outline-light btn-sm mx-1">Contact</a>
+                </nav>
+            </header>
+
+            <main>
+                <div class="container my-5">
+                    <h2 class="text-center mb-4" id="main-title">Buy or Rent Climbing Gear</h2>
+                    <p class="lead text-center mb-5">Discover our selection of climbing equipment to buy or rent for your trips to Fontainebleau.</p>
+
+                    <!-- Rent section-->
+                    <section class="mb-5">
+                        <h3 id="rental-title">Rent Gear</h3>
+                        <div class="row" id="rental-products">
+                            <!-- Climbing shoes -->
+                            <div class="col-md-4 mb-4 card-container">
+                                <div class="card">
+                                    <img src="data:image/jpeg;base64,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" class="card-img-top" alt="Climbing shoes">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Climbing Shoes</h5>
+                                        <p class="card-text">Rent a pair of comfortable Climbing shoes for your excursion. Available sizes: 36-46.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="text-success"><strong>15$/day</strong></p>
+                                            <button type="button" class="btn btn-primary" id="rent1">Rent</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- harness -->
+                            <div class="col-md-4 mb-4 card-container">
+                                <div class="card">
+                                    <img src="https://contents.mediadecathlon.com/p2303839/k$6045bfc5d6b5d3ab3177d8b52fac5656/picture.jpg" class="card-img-top" alt="Harness">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Harness</h5>
+                                        <p class="card-text">Rent a harness for optimal safety. Size: M/L/XL.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="text-success"><strong>20$/day</strong></p>
+                                            <button type="button" class="btn btn-primary" id="rent2">Rent</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Crash Pad -->
+                            <div class="col-md-4 mb-4 card-container">
+                                <div class="card">
+                                    <img src="https://www.bfgcdn.com/1500_1500_90/331-0107/mammut-slam-pad-crash-pad.jpg" class="card-img-top" alt="Crash Pad">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Crash Pad</h5>
+                                        <p class="card-text">Ideal for blocks. Prevent injuries in the event of a fall. Dimensions: 100x100 cm.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="text-success"><strong>25$/day</strong></p>
+                                            <button type="button" class="btn btn-primary" id="rent3">Rent</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Buy Section -->
+                    <section class="mb-5">
+                        <h3 id="purchase-title">Buy Gear</h3>
+                        <div class="row" id="pruchase-products">
+                            <!-- Climbing shoes -->
+                            <div class="col-md-4 mb-4 card-container">
+                                <div class="card">
+                                    <img src="data:image/jpeg;base64,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" class="card-img-top" alt="Climbing shoes">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Climbing Shoes</h5>
+                                        <p class="card-text">Buy a pair of high-performance climbing shoes for all your climbing sessions.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="text-success"><strong>35$</strong></p>
+                                            <button type="button" class="btn btn-primary" id="buy1">Buy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Harness -->
+                            <div class="col-md-4 mb-4 card-container">
+                                <div class="card">
+                                    <img src="https://contents.mediadecathlon.com/p2303839/k$6045bfc5d6b5d3ab3177d8b52fac5656/picture.jpg" class="card-img-top" alt="Harness">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Harness</h5>
+                                        <p class="card-text">High-quality harness for optimal safety and comfort during your climbs.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="text-success"><strong>60$</strong></p>
+                                            <button type="button" class="btn btn-primary" id="buy2">Buy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Helmet -->
+                            <div class="col-md-4 mb-4 card-container">
+                                <div class="card">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Climbing_helmet.jpg" class="card-img-top" alt="Climbing Helmet">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Climbing Helmet</h5>
+                                        <p class="card-text">Lightweight and comfortable helmet to protect your head when climbing cliffs.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="text-success"><strong>45$</strong></p>
+                                            <button type="button" class="btn btn-primary" id="buy3">Buy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Crash Pad -->
+                            <div class="col-md-4 mb-4 card-container">
+                                <div class="card">
+                                    <img src="https://www.bfgcdn.com/1500_1500_90/331-0107/mammut-slam-pad-crash-pad.jpg" class="card-img-top" alt="Crash Pad">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Crash Pad</h5>
+                                        <p class="card-text">Crash Pad to secure fall.</p>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="text-success"><strong>160$</strong></p>
+                                            <button type="button" class="btn btn-primary" id="buy4">Buy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <footer>
+                <p>&copy; Martin - 2025. All rigth Reserved</p>
+            </footer>
+        </div>
+
+        <script>
+            window.onload = function() {
+                //Anime main title
+                anime({
+                    targets: '#maint-title',
+                    translateY: [-100, 0],
+                    opacity: [0, 1],
+                    duration: 1500,
+                    easing: 'easeOutBounce'
+                });
+                //Anime section
+                anime({
+                    targets: '#rental-title, #purchase-title',
+                    translateY: [-100, 0],
+                    opacity: [0, 1],
+                    delay: anime.stagger(500), // stagger for lag effect
+                    duration: 1200,
+                    easing: 'easeOutQuad'
+                });
+                //Anime Cards
+                anime({
+                    targets: '.card-container',
+                    translateY: [50, 0],
+                    opacity: [0, 1],
+                    delay: anime.stagger(200),
+                    duration: 1000,
+                    easing: 'easeOutExpo'
+                });
+                //Anime button
+                anime({
+                    targets: '.btn',
+                    translateY: [0.8, 1],
+                    opacity: [0, 1],
+                    delay: anime.stagger(300),
+                    duration: 800,
+                    easing: 'easeOutBounce'
+                });
+                // just alert on button press
+                btn_click()
+            }
+        </script>
+    </body>
+
+</html>

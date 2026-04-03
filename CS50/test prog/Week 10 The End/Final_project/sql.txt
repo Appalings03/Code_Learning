@@ -1,0 +1,34 @@
+COUNT SQL
+
+CREATE TABLE fields (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    user_id INTEGER
+);
+
+CREATE TABLE totals (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    field_name TEXT NOT NULL,
+    date TEXT NOT NULL,
+    year INTEGER NOT NULL,
+    total INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE logs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    field_name TEXT NOT NULL,
+    change INTEGER NOT NULL,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+-------------------------------------------------
+SUBSCIBER SQL
+
+CREATE TABLE subscribers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    timestamp
+    name TEXT NOT NULL,
+    surname TEXT NOT NULL,
+    email TEXT NOT NULL,
+    phone TEXT,
+    accept BOOL,
+);

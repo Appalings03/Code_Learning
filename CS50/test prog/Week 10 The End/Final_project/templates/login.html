@@ -1,0 +1,23 @@
+{# templates /login.html #}
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block main %}
+    <div class="sub-wrapper">
+        <form action="" method="post" class="sub-form">
+            <h2>Login</h2>
+            <div class="input-field">
+                <input autocomplete="off" placeholder=" " autofocus class="form-control mx-auto w-auto" name="username" id="username" type="text" required>
+                <label for="username">Insert login</label>
+            </div>
+            <div class="input-field">
+                <input autocomplete="off" placeholder=" " class="form-control mx-auto w-auto" name="password" id="password" type="password" required>
+                <label for="password">Insert password</label>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

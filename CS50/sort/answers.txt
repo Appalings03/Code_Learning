@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?:(50000) reversed list took 4.8s, worst case for bubble sort; sorted list took: 296ms, best case for bubble sort
+
+sort2 uses: Merge Sort
+
+How do you know?: (50000) reversed and sorted list have the same time: respectively 372 and 337 ms; for the ramdom50000, this sort performed the best: 378 ms, so this is the Merge Sort
+
+sort3 uses: Selection Sort
+
+How do you know?: (50000) reversed list took 2.8s; sorted list took: 2.65s, perform the same for the best and worst case, like Selection Sort would do

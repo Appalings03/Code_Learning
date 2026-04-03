@@ -1,0 +1,24 @@
+Html Tags
+1) <script>
+2) <div>
+3) <header>
+4) <footer>
+5) <nav>
+6) <input>
+7) <select>
+8) <main>
+9) <form>
+10) <img>
+
+CSS Properties:
+1) display
+2) flex-direction
+3) background-color
+4) border-radius
+5) box-shadow
+
+Javascript usage:
+javascript was used to create animations with anime.js, manage form submissions and implement interactive images slideshow
+
+Bootstrap usage:
+Bootstrap was used to structure the layout and style components like buttons, forms and other html tags so it could be use on pc or mobile

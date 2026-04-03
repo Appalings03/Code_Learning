@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!-- Animation realise with https://animejs.com/ -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+        <script src="scripts.js" defer></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Climbing - Site</title>
+    </head>
+
+    <body class="bg-light text-dark">
+        <header class="bg-dark text-white text-center py-4">
+            <div class="logo-container">
+                <img src="rock.png" alt="Logo">
+            </div>
+            <h1><strong>Climbing - Fontainebleau</strong></h1>
+            <nav class="my-2">
+                <a href="index.html" class="btn btn-outline-light btn-sm mx-1">Home</a>
+                <a href="site.html" class="btn btn-outline-light btn-sm mx-1">Site</a>
+                <a href="matos.html" class="btn btn-outline-light btn-sm mx-1">Material</a>
+                <a href="inscription.html" class="btn btn-outline-light btn-sm mx-1">Inscription</a>
+                <a href="contact.html" class="btn btn-outline-light btn-sm mx-1">Contact</a>
+            </nav>
+        </header>
+
+        <main class="container my-5">
+            <section class="mb-5">
+                <h2 class="mb-4">Main massifs</h2>
+                <hr>
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <h3>North-East of Fontainebleau</h3>
+                        <h4>Yvelines</h4>
+                        <hr>
+                        <ul>
+                            <li>Vaux de Cernay</li>
+                            <li>Dampierre Maincourt</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="diaporama" id="diapo1">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/pascal.bocianowski/Jaune36Vaux_2.jpg" class="location-img active" alt="Vaux de Cernay">
+                            <img src="https://bleau.info/images/jean.pierre.roudneff/LaTravtrac2copy_3.jpg" class="location-img active" alt="Dampierre">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <h4>Essonne</h4>
+                        <hr>
+                        <ul>
+                            <li>La Troche</li>
+                            <li>Orsay</li>
+                            <li>Chamarande</li>
+                            <li>Les Grands Avaux (Beauvais)</li>
+                            <li>La Padôle</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="diaporama" id="diapo2">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/latroche/troche04513.jpg" class="location-img active" alt="La Troche">
+                            <img src="https://bleau.info/images/orsay/ToitdOrsay2-copie.jpg" class="location-img active" alt="Orsay">
+                            <img src="https://bleau.info/images/belvedere/Belvedere1.jpg" class="location-img active" alt="Chamarande">
+                            <img src="https://bleau.info/images/beauvais/SurplombDanseMacabre.jpg" class="location-img active" alt="Les Grands Avaux (Beauvais)">
+                            <img src="https://bleau.info/images/bart.van.raaij/PadoleDiableCorps.jpg" class="location-img active" alt="La Padôle">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <h3>Forêt des trois pignons</h3>
+                        <h4>North:</h4>
+                        <hr>
+                        <ul>
+                            <li>Gorge aux Châts</li>
+                            <li>La Feuillardière</li>
+                            <li>Rocher du Télégraphe</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="diaporama" id="diapo3">
+                            <img src="https://bleau.info/images/christophe.picard/Rotule-Gorgeauxchats5015.jpg" class="location-img active" alt="Gorge aux Châts">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/telegraphe2/Dolmen1.JPG" class="location-img active" alt="La Feuillardière">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/telegraphe2/Trounaturel.JPG" class="location-img active" alt="Rocher du Télégraphe">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <h3>East:</h3>
+                        <hr>
+                        <ul>
+                            <li>Corne-Biche</li>
+                            <li>Rocher de Milly</li>
+                            <li>Drei Zinnen</li>
+                            <li>Rocher de la Reine</li>
+                            <li>Bois Rond</li>
+                            <li>Canche aux Merciers</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="diaporama" id="diapo4">
+                            <img src="https://bleau.info/images/christophe.picard/PremierPrix-CorneBiche4791.jpg" class="location-img active" alt="Corne-Biche">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/rocherdemilly/dolmen.jpg" class="location-img active" alt="Rocher de Milly">
+                            <img src="https://bleau.info/images/nicolas.mondollot/DreiZinnenPapyrusDirect.jpg" class="location-img active" alt="Drei Zinnen">
+                            <img src="https://bleau.info/images/reine/reine02.jpg" class="location-img active" alt="Rocher de la Reine">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/rond/bois-rond.jpg" class="location-img active" alt="Bois Rond">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/cancheauxmerciers/derapage-h8.jpg" class="location-img active" alt="Canche aux Merciers">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <h3>South:</h3>
+                        <hr>
+                        <ul>
+                            <li>Rocher Guichot</li>
+                            <li>Diplodocus</li>
+                            <li>Rocher du Général</li>
+                            <li>Vallée de la Mée - Potala</li>
+                            <li>Grande Montagne</li>
+                            <li>Rocher Fin</li>
+                            <li>La Cathédrale</li>
+                            <li>J.A. Martin</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="diaporama" id="diapo5">
+                            <img src="https://bleau.info/images/bart.van.raaij/GuichotManyata.jpg" class="location-img active" alt="Rocher Guichot">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/diplodocus/blocdudiplodocus.jpg" class="location-img active" alt="Diplodocus">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/eric.letot/General5etoiles1copy.jpg" class="location-img active" alt="Rocher du Général">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/potala/bivouacmee2.jpg" class="location-img active" alt="Vallée de la Mée - Potala">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/grandemontagne/grandemontagne.jpg" class="location-img active" alt="Grande Montagne">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/rocherfin/fin2.jpg" class="location-img active" alt="Rocher Fin">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/cathedrale/cathedrale1.jpg" class="location-img active" alt="La Cathédrale">
+                            <img src="https://bleau.info/images/martin/JAMartinHassan.jpg" class="location-img active" alt="J.A. Martin">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <h3>West:</h3>
+                        <hr>
+                        <ul>
+                            <li>95.2</li>
+                            <li>Gros Sablons</li>
+                            <li>Rocher des Potêts</li>
+                            <li>Jean des Vignes</li>
+                            <li>La Ségognole</li>
+                            <li>Roche aux Sabots</li>
+                            <li>Pignon 91.1</li>
+                            <li>Cul de Chien</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="diaporama" id="diapo6">
+                            <img src="https://bleau.info/images/bart.van.raaij/952w24-24b.jpg" class="location-img active" alt="95.2">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/bart.van.raaij/Anachorete.jpg" class="location-img active" alt="Gros Sablons">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/henrik.boes.brolling/PilierPotets.jpg" class="location-img active" alt="Rocher des Potêts">
+                            <img src="https://bleau.info/images/didier.paupy/VignesBleu25.jpg" class="location-img active" alt="Jean des Vignes">
+                            <img src="https://bleau.info/images/segognoleouest/LArtedesBoss.jpg" class="location-img active" alt="La Ségognole">
+                            <img src="https://bleau.info/images/sabots/SabotsSnake.jpg" class="location-img active" alt="Roche aux Sabots">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/91.1/racine2006.jpg" class="location-img active" alt="Pignon 91.1">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/culduchien/bilboquet1.jpg" class="location-img active" alt="Cul de Chien">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <h3>Forêt domaniale de Fontainebleau</h3>
+                        <h4>Zone 1</h4>
+                        <hr>
+                        <ul>
+                            <li>Rocher Canon</li>
+                            <li>Rocher Saint Germain</li>
+                            <li>Mont Ussy</li>
+                            <li>Mont Aigu</li>
+                            <li>Rocher d'Avon</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="diaporama" id="diapo7">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/canon/canonrood02blauw02.jpg" class="location-img active" alt="Rocher Canon">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/germain/Lifestyle.JPG" class="location-img active" alt="Rocher Saint Germain">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/montussy/montussynord.jpg" class="location-img active" alt="Mont Ussy">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/montaigu/aigugeelstart.jpg" class="location-img active" alt="Mont Aigu">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/avon/damejeanneavon.jpg" class="location-img active" alt="Rocher d'Avon">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <h4>Zone 2</h4>
+                        <hr>
+                        <ul>
+                            <li>Le Cuvier</li>
+                            <li>Apremont</li>
+                            <li>Franchard</li>
+                            <li>Isatis</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="diaporama" id="diapo8">
+                            <img src="https://bleau.info/images/cuvier/VarationsCarnage.jpg" class="location-img active" alt="Le Cuvier">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/apremont/enneige2.jpg" class="location-img active" alt="Apremont">
+                            <img src="https://bleau.info/images/meyer/TopoMeyerSud20Fev2020-copie.jpg" class="location-img active" alt="Franchard">
+                            <img src="https://bleau.info/images/christophe.picard/49Orange-ISATIS.jpg" class="location-img active" alt="Isatis">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <h4>Zone 3</h4>
+                        <hr>
+                        <ul>
+                            <li>Le Restant du Long Rocher</li>
+                            <li>Rocher des Demoiselles</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="diaporama" id="diapo9">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/restantdulongrocher/grottebeatrix1.jpg" class="location-img active" alt="Le Restant du Long Rocher">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/demoiselles/rocherdesdemoiselles2.jpg" class="location-img active" alt="Rocher des Demoiselles">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <h3>South of Fontainebleau</h3>
+                        <h4>Malesherbes</h4>
+                        <hr>
+                        <ul>
+                            <li>Buthiers</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="diaporama" id="diapo10">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/y/Rocheperceecopy.jpg" class="location-img active" alt="Buthiers">
+                            <img src="https://bleau.info/images/roo.mellor/troudedalle-1copy.jpg" class="location-img active" alt="Malesherbes">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <h4>Larchant</h4>
+                        <hr>
+                        <ul>
+                            <li>l'Éléphant</li>
+                            <li>la Dame Jouanne</li>
+                            <li>le Puiselet</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="diaporama" id="diapo11">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/elephant/elephant.jpg" class="location-img active" alt="l'Éléphant">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/jouanne/dj2.jpg" class="location-img active" alt="la Dame Jouanne">
+                            <img src="https://bleau.info/images/sablibum/SablibumCcopy.jpg" class="location-img active" alt="le Puiselet">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <h4>Nemours</h4>
+                        <hr>
+                        <ul>
+                            <li>Le Petit-Bois de Saint-Pierre-lès-Nemours</li>
+                            <li>Rochers-Gréau</li>
+                            <li>Mont Olivet</li>
+                            <li>Vallon Cassepot</li>
+                            <li>Le Troglodyte</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="diaporama" id="diapo12">
+                            <img src="https://climbingaway.fr/photosite/739/miniature/Le%20triangle%20dor%206a.jpg" class="location-img active" alt="Le Petit-Bois de Saint-Pierre-lès-Nemours">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/greau/latour.jpg" class="location-img active" alt="Rochers-Gréau">
+                            <img src="https://s3.eu-west-3.amazonaws.com/bleauinfoimages/olivet/MontOlivet.jpg" class="location-img active" alt="Mont Olivet">
+                            <img src="https://bleau.info/images/cassepot/RocheTremble.jpg" class="location-img active" alt="Vallon Cassepot">
+                            <img src="https://bleau.info/images/troglodyte/TroglodyteNew.jpg" class="location-img active" alt="Le Troglodyte">
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section>
+                <h2 class="mb-4">Some Historic Routes</h2>
+                <p class="lead">Coming soon...</p>
+            </section>
+        </main>
+        <footer class="bg-dark text-white text-center py-3">
+            <p>&copy; Martin - 2025. All rigth Reserved</p>
+        </footer>
+        <script>
+            window.onload = (event) => {
+                for (let i = 1; i <= 12; i++) {
+                    const id = `diapo${i}`;
+                    if (document.getElementById(id)) {
+                        startDiaporama(id);
+                    }
+                }
+            };
+        </script>
+    </body>
+
+</html>

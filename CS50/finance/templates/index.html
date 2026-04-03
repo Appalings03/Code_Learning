@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+<h2>Your Portfolio</h2>
+
+{% if holdings %}
+<table class="table table-bordered table-hover mx-auto w-auto">
+    <thead class="table-light">
+        <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for h in holdings %}
+        <tr>
+            <td>{{ h.symbol }}</td>
+            <td>{{ h.name }}</td>
+            <td>{{ h.shares }}</td>
+            <td>{{ h.price | usd }}</td>
+            <td>{{ h.value | usd }}</td>
+        </tr>
+        {% endfor %}
+        <tfoot class="table-light">
+            <tr>
+                <th colspan="5" class="text-end">Cash</th>
+                <th>{{ cash | usd }}</th>
+            </tr>
+            <tr>
+                <th colspan="5" class="text-end">Grand&nbsp;Total</th>
+                <th>{{ total | usd }}</th>
+            </tr>
+        </tfoot>
+    </tbody>
+</table>
+{% else %}
+<p>You don't own any shares yet. You could by some!</p>
+{% endif %}
+{% endblock %}

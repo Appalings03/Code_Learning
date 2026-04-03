@@ -1,0 +1,31 @@
+To test your queries in VS Code, you can query the database by running
+
+$ cat filename.sql | sqlite3 movies.db
+where filename.sql is the file containing your SQL query.
+
+You can also run
+
+$ cat filename.sql | sqlite3 movies.db > output.txt
+to redirect the output of the query to a text file called output.txt. (This can be useful for checking how many rows are returned by your query!)
+
+How to Test
+While check50 is available for this problem, you’re encouraged to instead test your code on your own for each of the following. You can run sqlite3 movies.db to run additional queries on the database to ensure that your result is correct.
+
+If you’re using the movies.db database provided in this problem set’s distribution, you should find that
+
+Executing 1.sql results in a table with 1 column and 10,494 rows.
+Executing 2.sql results in a table with 1 column and 1 row.
+Executing 3.sql results in a table with 1 column and 130,992 rows.
+Executing 4.sql results in a table with 1 column and 1 row.
+Executing 5.sql results in a table with 2 columns and 14 rows.
+Executing 6.sql results in a table with 1 column and 1 row.
+Executing 7.sql results in a table with 2 columns and 7,295 rows.
+Executing 8.sql results in a table with 1 column and 10 rows.
+Executing 9.sql results in a table with 1 column and 35,765 rows.
+Executing 10.sql results in a table with 1 column and 4,726 rows.
+Executing 11.sql results in a table with 1 column and 5 rows.
+Executing 12.sql results in a table with 1 column and 4 rows.
+Executing 13.sql results in a table with 1 column and 553 rows.
+Note that row counts do not include header rows that only show column names.
+
+If your query returns a number of rows that is slightly different from the expected output, be sure that you’re properly handling duplicates! For queries that ask for a list of names, no one person should be listed twice, but two different people who have the same name should each be listed.

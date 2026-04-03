@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            // Wait for webpage to load before running js
+            document.addEventListener("DOMContentLoaded", function()
+            {
+                // multiple choice handling
+                const mcForms = document.querySelectorAll(".mc-form");
+
+                mcForms.forEach(form => {
+                    const buttons = form.querySelectorAll("li button");
+                    const feedback = form.querySelector(".fb");
+                    const correct = form.dataset.correct;
+
+                    buttons.forEach(button =>{
+                        button.addEventListener("click", function(e){
+                            e.preventDefault();
+
+                            buttons.forEach(btn => {
+                                btn.classList.remove("correct", "incorrect");
+                            });
+                            // Verify correctness of response
+                            if (button.textContent.trim() === correct.trim()) {
+                                button.classList.add("correct");
+                                feedback.textContent = "Correct!";
+                                feedback.style.color = "green";
+                            } else {
+                                button.classList.add("incorrect");
+                                feedback.textContent = "Incorrect!";
+                                feedback.style.color = "red";
+                            }
+                        });
+                    });
+                });
+
+                // free choice handling
+                const frForms = document.querySelectorAll(".fr-form");
+
+                frForms.forEach(form => {
+                    form.addEventListener("submit", function(e) {
+                        e.preventDefault();
+
+                        const input = form.querySelector("input");
+                        const feedback = form.querySelector(".fb");
+                        const correct = form.dataset.answer.trim().toLowerCase();
+                        const ans = input.value.trim().toLowerCase();
+
+                        input.classList.remove("correct", "incorrect");
+
+                        if (ans === correct) {
+                            input.classList.add("correct");
+                            feedback.textContent = "Correct!";
+                            feedback.style.color = "green";
+                        }
+                        else {
+                            input.classList.add("incorrect");
+                            feedback.textContent = "Incorrect!";
+                            feedback.style.color = "red";
+                        }
+                    });
+                });
+                // Reset handling
+                document.getElementById("reset").addEventListener("click", function () {
+                    document.querySelectorAll(".mc-form").forEach(form =>{
+                        form.querySelectorAll("button").forEach(button =>{
+                            button.classList.remove("correct", "incorrect");
+                        });
+                        const feedback = form.querySelector(".fb");
+                        if (feedback){
+                            feedback.textContent = "";
+                            feedback.style.color = "";
+                        }
+                    });
+                    document.querySelectorAll(".fr-form").forEach(form =>{
+                        const input = form.querySelector("input");
+                        const feedback = form.querySelector(".fb");
+                        if(input){
+                            input.value = "";
+                            input.classList.remove("correct", "incorrect");
+                        }
+                        if (feedback){
+                            feedback.textContent = "";
+                            feedback.style.color = "";
+                        }
+                    });
+                });
+            });
+
+
+            // js informations for function
+            // html and css informations for tag and attribue
+            // https://www.w3schools.com/
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <!-- Question1 : Green -->
+                <form class="mc-form" data-correct="Green" id="mc1">
+                    <h3>Which color is the light on the left wing of a plane facing forward?</h3>
+                    <ul>
+                        <li><button type="submit">Yellow</button></li>
+                        <li><button type="submit">Green</button></li>
+                        <li><button type="submit">Blue</button></li>
+                        <li><button type="submit">White</button></li>
+                        <li><button type="submit">Red</button></li>
+                    </ul>
+                    <p class="fb" id="rmc1"></p>
+                    <img>
+                </form>
+                <!-- Question 2 :  -->
+                <form class="mc-form" data-correct="Wings" id="mc2">
+                    <h3>Which part of an aircraft generates the majority of lift during flight?</h3>
+                    <ul>
+                        <li><button type="submit">Fuselage</button></li>
+                        <li><button type="submit">Rudder</button></li>
+                        <li><button type="submit">Wings</button></li>
+                        <li><button type="submit">Tail</button></li>
+                        <li><button type="submit">Landing gear</button></li>
+                    </ul>
+                    <p class="fb" id="rmc2"></p>
+                    <img>
+                </form>
+                <!-- Question 3 :  -->
+                <form class="mc-form" data-correct="Control yaw" id="mc3">
+                    <h3>What is the primary function of the vertical stabilizer on an aircraft?</h3>
+                    <ul>
+                        <li><button type="submit">Increase lift</button></li>
+                        <li><button type="submit">Provide forward thrust</button></li>
+                        <li><button type="submit">Control pitch</button></li>
+                        <li><button type="submit">Reduce drag</button></li>
+                        <li><button type="submit">Control yaw</button></li>
+                    </ul>
+                    <p class="fb" id="rmc3"></p>
+                    <img>
+                </form>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <!-- Question 1: -->
+                <form class="fr-form" data-answer="Turbofan" id="fr1">
+                    <h3>Name one type of aircraft engine commonly used in commercial airliners.</h3>
+                    <input type="text" placeholder="Answer">
+                    <button type="submit">Submit</button>
+                    <p class="fb" id=""></p>
+                </form>
+                <!-- Question : -->
+                <form class="fr-form" data-answer="Altimeter" id="fr2">
+                    <h3>What instrument in the cockpit indicates an aircraft’s altitude?</h3>
+                    <input type="text" placeholder="Answer">
+                    <button type="submit">Submit</button>
+                    <p class="fb" id="rfr2"></p>
+                </form>
+                <!-- Question 3: -->
+                <form class="fr-form" data-answer="Aileron" id="fr3">
+                    <h3>What is the name of the surface on the wing that helps control the aircraft’s roll?</h3>
+                    <input type="text" placeholder="Answer">
+                    <button type="submit">Submit</button>
+                    <p class="fb" id="rfr3"></p>
+                </form>
+            </div>
+            <div class="section">
+                <h2>Reset Here</h2>
+                <hr>
+                <button id="reset">Reset Quiz</button>
+            </div>
+        </div>
+    </body>
+</html>

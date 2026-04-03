@@ -1,0 +1,38 @@
+{# templates /subscribe.html #}
+{% extends "layout.html" %}
+
+{% block title %}
+    Subscibre
+{% endblock %}
+
+{% block main %}
+    <div class="sub-wrapper">
+        <form action="" method="post" class="sub-form">
+            <h2>TEST</h2>
+            <div class="input-field">
+                <input autocomplete="off" placeholder=" " autofocus class="form-control mx-auto w-auto" name="name" id="name" type="text" required>
+                <label for="name"><span class="red">*</span>Enter your name: </label>
+            </div>
+            <div class="input-field">
+                <input autocomplete="off" placeholder=" " class="form-control mx-auto w-auto" name="surname" id="surname" type="text" required>
+                <label for="surname"><span class="red">*</span>Enter your surname: </label>
+            </div>
+            <div class="input-field">
+                <input autocomplete="off" placeholder=" " class="form-control mx-auto w-auto" name="email" id="email" type="email" required>
+                <label for="email"><span class="red">*</span>Enter your Email: </label>
+            </div>
+            <div class="input-field">
+                <input autocomplete="off" placeholder=" " class="form-control mx-auto w-auto" name="phone" id="phone" type="tel">
+                <label for="phone">Enter your phone number: </label>
+            </div>
+            <div class="accept-option">
+                <p>Terms: </p>
+                <label for="accept">
+                    <p><span class="red">*</span>I accept the terms and conditions</p>
+                    <input type="checkbox" id="accept" required>
+                </label>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

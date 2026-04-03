@@ -1,0 +1,120 @@
+{# templates /count.html #}
+{% extends "layout.html" %}
+
+{% block title %}
+    Count
+{% endblock %}
+
+{% block main %}
+    <div class="count-wrapper">
+        {% if available_years %}
+        <div class="form-group mb-4">
+            <label for="year-select" class="form-label text-white">Sélectionner une année pour restaurer les champs :</label>
+            <select id="year-select" class="form-select">
+                {% for year in available_years %}
+                    <option value="{{ year.year }}">{{ year.year }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        {% endif %}
+
+        <form id="count-form">
+            <div id="field-list" class="d-flex flex-column gap-3"></div>
+            <div class="mt-4">
+                <button type="button" id="toggle-edit" class="btn btn-warning">Modifier</button>
+                <button type="button" id="add-field" class="btn btn-success d-none">Ajouter un champ</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let editMode = false;
+
+        function createFieldElement({id, name, count=0}) {
+            /* create div to hold the counter */
+            const container = document.createElement('div');
+            container.className = "field-item d-flex justify-content-between align-items-center bg-light p-2 rounded";
+            container.dataset.id = id;
+            /* Create the label for the counter */
+            const label = document.createElement('input');
+            label.type = "text";
+            label.className = "form-control me-2 field-label";
+            label.value = name;
+            label.disabled = !editMode;
+            /* Create span for the counter */
+            const counter = document.createElement('span');
+            counter.className = "count fw-bold mx-2";
+            counter.innerText = count;
+            /* Create Increment en decrement button */
+            const incBTN = document.createElement('button');
+            incBTN.innerText = "+";
+            incBTN.type = "button";
+            incBTN.className = "btn btn-sm btn-primary";
+            incBTN.onclick = () => updateCount(id, 1, counter);
+            const decBTN = document.createElement('button');
+            decBTN.innerText = "-";
+            decBTN.type = "button";
+            decBTN.className = "btn btn-sm btn-danger mx-1";
+            decBTN.onclick = () => updateCount(id, -1, counter);
+            const deleteBTN = document.createElement('button');
+            deleteBTN.innerText = "X";
+            deleteBTN.type = "button";
+            deleteBTN.className = "btn btn-sm btn-outline-danger d-none delete-btn";
+            deleteBTN.onclick = () => {
+                fetch("/delete-field", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({id})
+            }).then(() => container.remove());
+        };
+
+            container.append(label, decBTN, counter, incBTN, deleteBTN);
+            document.getElementById('field-list').appendChild(container);
+        }
+
+        function updateCount (fieldId, delta, displayElem) {
+            const newvalue = parseInt(displayElem.innerText) + delta;
+            displayElem.innerText = newvalue;
+            fetch('/update-count', {
+                method: 'Post',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({id: fieldID, delta})
+            });
+        }
+        /* toggle Edit Mode Logic */
+        document.getElementById('toggle-edit').addEventListener('click', () => {
+            editMode = !editMode;
+            document.getElementById('toggle-edit').innerText = editMode ? "Save" : "Modify";
+            document.querySelectorAll('.field-label').forEach(input => input.disabled = !editMode);
+            document.querySelectorAll('.delete-btn').forEach(btn => btn.classList.toggle('d-none'));
+            document.getElementById('add-field').classList.toggle('d-none');
+        });
+        document.getElementById('add-field').addEventListener('click', () => {
+            createFieldElement({id: `new-${Date.now()}`, name: "New Field", count: 0});
+        });
+        document.getElementById('year-select')?.addEventListener('change', function () {
+            const year = this.value;
+            fetch(`/get-field?year=${year}`)
+                .then(response = response.json())
+                .then(data => {
+                    const fieldList = document.getElementById('field-list');
+                    fieldList.innerHTML = "";
+                    data.fields.forEach(f => createFieldElement({ id: f.id, name: field.field_name, count: 0}));
+                });
+        });
+
+        {% if not default_fields %}
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('toggle-edit').click();
+        });
+        {% else %}
+        const initialFields = [
+            {% for field in default_fields %}
+            { id: {{ loop.index }}, name: "{{ field.field_name }}", count: 0},
+            {% endfor %}
+        ];
+        initialFields.forEach(createFieldElement);
+        {% endif %}
+    </script>
+
+{% endblock %}
